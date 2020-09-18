@@ -15,12 +15,15 @@ Method | HTTP request | Description
 [**update_list**](ListsApi.md#update_list) | **PUT** /contacts/lists/{listId} | Update a list
 
 
-# **add_contact_to_list**
+
+## add_contact_to_list
+
 > PostContactInfo add_contact_to_list(list_id, contact_emails)
 
 Add existing contacts to a list
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -38,11 +41,8 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::ListsApi.new
-
-list_id = 789 # Integer | Id of the list
-
+list_id = 56 # Integer | Id of the list
 contact_emails = SibApiV3Sdk::AddContactToList.new # AddContactToList | Emails addresses OR IDs of the contacts
-
 
 begin
   #Add existing contacts to a list
@@ -54,6 +54,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -70,17 +71,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## create_list
 
-# **create_list**
 > CreateModel create_list(create_list)
 
 Create a list
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -98,9 +100,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::ListsApi.new
-
 create_list = SibApiV3Sdk::CreateList.new # CreateList | Values to create a list
-
 
 begin
   #Create a list
@@ -112,6 +112,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -127,17 +128,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## delete_list
 
-# **delete_list**
 > delete_list(list_id)
 
 Delete a list
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -155,9 +157,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::ListsApi.new
-
-list_id = 789 # Integer | Id of the list
-
+list_id = 56 # Integer | Id of the list
 
 begin
   #Delete a list
@@ -168,6 +168,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -183,17 +184,18 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_contacts_from_list
 
-# **get_contacts_from_list**
 > GetContacts get_contacts_from_list(list_id, opts)
 
 Get contacts in a list
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -211,10 +213,8 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::ListsApi.new
-
-list_id = 789 # Integer | Id of the list
-
-opts = { 
+list_id = 56 # Integer | Id of the list
+opts = {
   modified_since: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.
   limit: 50, # Integer | Number of documents per page
   offset: 0 # Integer | Index of the first document of the page
@@ -230,6 +230,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -248,17 +249,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_folder_lists
 
-# **get_folder_lists**
 > GetFolderLists get_folder_lists(folder_id, opts)
 
 Get lists in a folder
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -276,10 +278,8 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::ListsApi.new
-
-folder_id = 789 # Integer | Id of the folder
-
-opts = { 
+folder_id = 56 # Integer | Id of the folder
+opts = {
   limit: 10, # Integer | Number of documents per page
   offset: 0 # Integer | Index of the first document of the page
 }
@@ -294,6 +294,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -311,17 +312,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_list
 
-# **get_list**
 > GetExtendedList get_list(list_id)
 
 Get a list's details
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -339,9 +341,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::ListsApi.new
-
-list_id = 789 # Integer | Id of the list
-
+list_id = 56 # Integer | Id of the list
 
 begin
   #Get a list's details
@@ -353,6 +353,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -368,17 +369,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_lists
 
-# **get_lists**
 > GetLists get_lists(opts)
 
 Get all the lists
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -396,8 +398,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::ListsApi.new
-
-opts = { 
+opts = {
   limit: 10, # Integer | Number of documents per page
   offset: 0 # Integer | Index of the first document of the page
 }
@@ -412,6 +413,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -428,17 +430,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## remove_contact_from_list
 
-# **remove_contact_from_list**
 > PostContactInfo remove_contact_from_list(list_id, contact_emails)
 
 Delete a contact from a list
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -456,11 +459,8 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::ListsApi.new
-
-list_id = 789 # Integer | Id of the list
-
+list_id = 56 # Integer | Id of the list
 contact_emails = SibApiV3Sdk::RemoveContactFromList.new # RemoveContactFromList | Emails addresses OR IDs of the contacts
-
 
 begin
   #Delete a contact from a list
@@ -472,6 +472,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -488,17 +489,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## update_list
 
-# **update_list**
 > update_list(list_id, update_list)
 
 Update a list
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -516,11 +518,8 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::ListsApi.new
-
-list_id = 789 # Integer | Id of the list
-
+list_id = 56 # Integer | Id of the list
 update_list = SibApiV3Sdk::UpdateList.new # UpdateList | Values to update a list
-
 
 begin
   #Update a list
@@ -531,6 +530,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -547,8 +547,6 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 

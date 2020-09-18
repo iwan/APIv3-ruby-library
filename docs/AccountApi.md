@@ -7,12 +7,15 @@ Method | HTTP request | Description
 [**get_account**](AccountApi.md#get_account) | **GET** /account | Get your account information, plan and credits details
 
 
-# **get_account**
+
+## get_account
+
 > GetAccount get_account
 
 Get your account information, plan and credits details
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -41,6 +44,7 @@ end
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -53,8 +57,6 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 

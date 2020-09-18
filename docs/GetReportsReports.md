@@ -1,6 +1,7 @@
 # SibApiV3Sdk::GetReportsReports
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **date** | **Date** | Date of the statistics | 
@@ -16,5 +17,25 @@ Name | Type | Description | Notes
 **blocked** | **Integer** | Number of blocked emails for the date | 
 **invalid** | **Integer** | Number of invalid emails for the date | 
 **unsubscribed** | **Integer** | Number of unsubscribed emails for the date | 
+
+## Code Sample
+
+```ruby
+require 'SibApiV3Sdk'
+
+instance = SibApiV3Sdk::GetReportsReports.new(date: Thu Apr 06 05:30:00 IST 2017,
+                                 requests: 65,
+                                 delivered: 63,
+                                 hard_bounces: 1,
+                                 soft_bounces: 1,
+                                 clicks: 6,
+                                 unique_clicks: 5,
+                                 opens: 58,
+                                 unique_opens: 52,
+                                 spam_reports: 0,
+                                 blocked: 0,
+                                 invalid: 0,
+                                 unsubscribed: 0)
+```
 
 

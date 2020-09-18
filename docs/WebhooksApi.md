@@ -11,12 +11,15 @@ Method | HTTP request | Description
 [**update_webhook**](WebhooksApi.md#update_webhook) | **PUT** /webhooks/{webhookId} | Update a webhook
 
 
-# **create_webhook**
+
+## create_webhook
+
 > CreateModel create_webhook(create_webhook)
 
 Create a webhook
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -34,9 +37,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::WebhooksApi.new
-
 create_webhook = SibApiV3Sdk::CreateWebhook.new # CreateWebhook | Values to create a webhook
-
 
 begin
   #Create a webhook
@@ -48,6 +49,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -63,17 +65,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## delete_webhook
 
-# **delete_webhook**
 > delete_webhook(webhook_id)
 
 Delete a webhook
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -91,9 +94,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::WebhooksApi.new
-
-webhook_id = 789 # Integer | Id of the webhook
-
+webhook_id = 56 # Integer | Id of the webhook
 
 begin
   #Delete a webhook
@@ -104,6 +105,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -119,17 +121,18 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_webhook
 
-# **get_webhook**
 > GetWebhook get_webhook(webhook_id)
 
 Get a webhook details
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -147,9 +150,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::WebhooksApi.new
-
-webhook_id = 789 # Integer | Id of the webhook
-
+webhook_id = 56 # Integer | Id of the webhook
 
 begin
   #Get a webhook details
@@ -161,6 +162,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -176,17 +178,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_webhooks
 
-# **get_webhooks**
 > GetWebhooks get_webhooks(opts)
 
 Get all webhooks
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -204,8 +207,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::WebhooksApi.new
-
-opts = { 
+opts = {
   type: 'transactional' # String | Filter on webhook type
 }
 
@@ -220,9 +222,10 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | **String**| Filter on webhook type | [optional] [default to transactional]
+ **type** | **String**| Filter on webhook type | [optional] [default to &#39;transactional&#39;]
 
 ### Return type
 
@@ -234,17 +237,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## update_webhook
 
-# **update_webhook**
 > update_webhook(webhook_id, update_webhook)
 
 Update a webhook
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -262,11 +266,8 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::WebhooksApi.new
-
-webhook_id = 789 # Integer | Id of the webhook
-
+webhook_id = 56 # Integer | Id of the webhook
 update_webhook = SibApiV3Sdk::UpdateWebhook.new # UpdateWebhook | Values to update a webhook
-
 
 begin
   #Update a webhook
@@ -277,6 +278,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -293,8 +295,6 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 

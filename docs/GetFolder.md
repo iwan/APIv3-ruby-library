@@ -1,6 +1,7 @@
 # SibApiV3Sdk::GetFolder
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** | ID of the folder | 
@@ -8,5 +9,17 @@ Name | Type | Description | Notes
 **total_blacklisted** | **Integer** | Number of blacklisted contacts in the folder | 
 **total_subscribers** | **Integer** | Number of contacts in the folder | 
 **unique_subscribers** | **Integer** | Number of unique contacts in the folder | 
+
+## Code Sample
+
+```ruby
+require 'SibApiV3Sdk'
+
+instance = SibApiV3Sdk::GetFolder.new(id: 2,
+                                 name: Magento Customers,
+                                 total_blacklisted: 32,
+                                 total_subscribers: 19777,
+                                 unique_subscribers: 16222)
+```
 
 

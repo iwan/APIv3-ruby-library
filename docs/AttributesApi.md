@@ -10,12 +10,15 @@ Method | HTTP request | Description
 [**update_attribute**](AttributesApi.md#update_attribute) | **PUT** /contacts/attributes/{attributeCategory}/{attributeName} | Update contact attribute
 
 
-# **create_attribute**
+
+## create_attribute
+
 > create_attribute(attribute_category, attribute_name, create_attribute)
 
 Create contact attribute
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -33,13 +36,9 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::AttributesApi.new
-
 attribute_category = 'attribute_category_example' # String | Category of the attribute
-
 attribute_name = 'attribute_name_example' # String | Name of the attribute
-
 create_attribute = SibApiV3Sdk::CreateAttribute.new # CreateAttribute | Values to create an attribute
-
 
 begin
   #Create contact attribute
@@ -50,6 +49,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -67,17 +67,18 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## delete_attribute
 
-# **delete_attribute**
 > delete_attribute(attribute_category, attribute_name)
 
 Delete an attribute
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -95,11 +96,8 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::AttributesApi.new
-
 attribute_category = 'attribute_category_example' # String | Category of the attribute
-
 attribute_name = 'attribute_name_example' # String | Name of the existing attribute
-
 
 begin
   #Delete an attribute
@@ -110,6 +108,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -126,17 +125,18 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_attributes
 
-# **get_attributes**
 > GetAttributes get_attributes
 
 List all attributes
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -165,6 +165,7 @@ end
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -177,17 +178,18 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## update_attribute
 
-# **update_attribute**
 > update_attribute(attribute_category, attribute_name, update_attribute)
 
 Update contact attribute
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -205,13 +207,9 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::AttributesApi.new
-
 attribute_category = 'attribute_category_example' # String | Category of the attribute
-
 attribute_name = 'attribute_name_example' # String | Name of the existing attribute
-
 update_attribute = SibApiV3Sdk::UpdateAttribute.new # UpdateAttribute | Values to update an attribute
-
 
 begin
   #Update contact attribute
@@ -222,6 +220,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -239,8 +238,6 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 

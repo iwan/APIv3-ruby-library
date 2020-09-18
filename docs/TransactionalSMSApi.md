@@ -10,12 +10,15 @@ Method | HTTP request | Description
 [**send_transac_sms**](TransactionalSMSApi.md#send_transac_sms) | **POST** /transactionalSMS/sms | Send SMS message to a mobile number
 
 
-# **get_sms_events**
+
+## get_sms_events
+
 > GetSmsEventReport get_sms_events(opts)
 
 Get all your SMS activity (unaggregated events)
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -33,8 +36,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::TransactionalSMSApi.new
-
-opts = { 
+opts = {
   limit: 50, # Integer | Number of documents per page
   start_date: 'start_date_example', # String | Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
   end_date: 'end_date_example', # String | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
@@ -55,6 +57,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -77,17 +80,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_transac_aggregated_sms_report
 
-# **get_transac_aggregated_sms_report**
 > GetTransacAggregatedSmsReport get_transac_aggregated_sms_report(opts)
 
 Get your SMS activity aggregated over a period of time
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -105,8 +109,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::TransactionalSMSApi.new
-
-opts = { 
+opts = {
   start_date: 'start_date_example', # String | Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
   end_date: 'end_date_example', # String | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
   days: 56, # Integer | Number of days in the past including today (positive integer). Not compatible with startDate and endDate
@@ -123,6 +126,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -141,17 +145,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_transac_sms_report
 
-# **get_transac_sms_report**
 > GetTransacSmsReport get_transac_sms_report(opts)
 
 Get your SMS activity aggregated per day
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -169,8 +174,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::TransactionalSMSApi.new
-
-opts = { 
+opts = {
   start_date: 'start_date_example', # String | Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
   end_date: 'end_date_example', # String | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
   days: 56, # Integer | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
@@ -187,6 +191,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -205,17 +210,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## send_transac_sms
 
-# **send_transac_sms**
 > SendSms send_transac_sms(send_transac_sms)
 
 Send SMS message to a mobile number
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -233,9 +239,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::TransactionalSMSApi.new
-
 send_transac_sms = SibApiV3Sdk::SendTransacSms.new # SendTransacSms | Values to send a transactional SMS
-
 
 begin
   #Send SMS message to a mobile number
@@ -247,6 +251,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -262,8 +267,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 

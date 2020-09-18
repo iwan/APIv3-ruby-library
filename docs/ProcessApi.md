@@ -8,12 +8,15 @@ Method | HTTP request | Description
 [**get_processes**](ProcessApi.md#get_processes) | **GET** /processes | Return all the processes for your account
 
 
-# **get_process**
+
+## get_process
+
 > GetProcess get_process(process_id)
 
 Return the informations for a process
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -31,9 +34,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::ProcessApi.new
-
-process_id = 789 # Integer | Id of the process
-
+process_id = 56 # Integer | Id of the process
 
 begin
   #Return the informations for a process
@@ -45,6 +46,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -60,17 +62,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_processes
 
-# **get_processes**
 > GetProcesses get_processes(opts)
 
 Return all the processes for your account
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -88,8 +91,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::ProcessApi.new
-
-opts = { 
+opts = {
   limit: 10, # Integer | Number limitation for the result returned
   offset: 0 # Integer | Beginning point in the list to retrieve from.
 }
@@ -104,6 +106,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -120,8 +123,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 

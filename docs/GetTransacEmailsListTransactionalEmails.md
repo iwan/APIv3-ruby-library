@@ -1,6 +1,7 @@
 # SibApiV3Sdk::GetTransacEmailsListTransactionalEmails
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **email** | **String** | Email address to which transactional email has been sent | 
@@ -11,5 +12,20 @@ Name | Type | Description | Notes
 **date** | **DateTime** | Date on which transactional email was sent | 
 **from** | **String** | Email address of the sender from which the email was sent | [optional] 
 **tags** | **Array&lt;String&gt;** | Tags used for your email | [optional] 
+
+## Code Sample
+
+```ruby
+require 'SibApiV3Sdk'
+
+instance = SibApiV3Sdk::GetTransacEmailsListTransactionalEmails.new(email: john.smith@example.com,
+                                 subject: Summer Camp,
+                                 template_id: 2,
+                                 message_id: &lt;201798300811.5700093@relay.domain.com&gt;,
+                                 uuid: 5a78c-209ok98262910-s99a341,
+                                 date: 2017-03-12T12:30Z,
+                                 from: diana.doe@example.com,
+                                 tags: null)
+```
 
 

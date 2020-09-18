@@ -1,9 +1,19 @@
 # SibApiV3Sdk::GetFolders
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**folders** | **Array&lt;Object&gt;** |  | [optional] 
+**folders** | [**Array&lt;GetFolder&gt;**](GetFolder.md) |  | [optional] 
 **count** | **Integer** | Number of folders available in your account | [optional] 
+
+## Code Sample
+
+```ruby
+require 'SibApiV3Sdk'
+
+instance = SibApiV3Sdk::GetFolders.new(folders: null,
+                                 count: 10)
+```
 
 

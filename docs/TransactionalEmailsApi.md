@@ -23,12 +23,15 @@ Method | HTTP request | Description
 [**update_smtp_template**](TransactionalEmailsApi.md#update_smtp_template) | **PUT** /smtp/templates/{templateId} | Update an email template
 
 
-# **create_smtp_template**
+
+## create_smtp_template
+
 > CreateModel create_smtp_template(smtp_template)
 
 Create an email template
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -46,9 +49,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::TransactionalEmailsApi.new
-
 smtp_template = SibApiV3Sdk::CreateSmtpTemplate.new # CreateSmtpTemplate | values to update in transactional email template
-
 
 begin
   #Create an email template
@@ -60,6 +61,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -75,12 +77,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## delete_hardbounces
 
-# **delete_hardbounces**
 > delete_hardbounces(opts)
 
 Delete hardbounces
@@ -88,6 +90,7 @@ Delete hardbounces
 Delete hardbounces. To use carefully (e.g. in case of temporary ISP failures)
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -105,8 +108,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::TransactionalEmailsApi.new
-
-opts = { 
+opts = {
   delete_hardbounces: SibApiV3Sdk::DeleteHardbounces.new # DeleteHardbounces | values to delete hardbounces
 }
 
@@ -119,6 +121,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -134,17 +137,18 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## delete_smtp_template
 
-# **delete_smtp_template**
 > delete_smtp_template(template_id)
 
 Delete an inactive email template
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -162,9 +166,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::TransactionalEmailsApi.new
-
-template_id = 789 # Integer | id of the template
-
+template_id = 56 # Integer | id of the template
 
 begin
   #Delete an inactive email template
@@ -175,6 +177,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -190,17 +193,18 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_aggregated_smtp_report
 
-# **get_aggregated_smtp_report**
 > GetAggregatedReport get_aggregated_smtp_report(opts)
 
 Get your transactional email activity aggregated over a period of time
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -218,8 +222,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::TransactionalEmailsApi.new
-
-opts = { 
+opts = {
   start_date: 'start_date_example', # String | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate
   end_date: 'end_date_example', # String | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate
   days: 56, # Integer | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
@@ -236,6 +239,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -254,17 +258,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_email_event_report
 
-# **get_email_event_report**
 > GetEmailEventReport get_email_event_report(opts)
 
 Get all your transactional email activity (unaggregated events)
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -282,8 +287,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::TransactionalEmailsApi.new
-
-opts = { 
+opts = {
   limit: 50, # Integer | Number limitation for the result returned
   offset: 0, # Integer | Beginning point in the list to retrieve from.
   start_date: 'start_date_example', # String | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate
@@ -293,7 +297,7 @@ opts = {
   event: 'event_example', # String | Filter the report for a specific event type
   tags: 'tags_example', # String | Filter the report for tags (serialized and urlencoded array)
   message_id: 'message_id_example', # String | Filter on a specific message id
-  template_id: 789 # Integer | Filter on a specific template id
+  template_id: 56 # Integer | Filter on a specific template id
 }
 
 begin
@@ -307,6 +311,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| Number limitation for the result returned | [optional] [default to 50]
@@ -314,7 +319,7 @@ Name | Type | Description  | Notes
  **start_date** | **String**| Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate | [optional] 
  **end_date** | **String**| Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate | [optional] 
  **days** | **Integer**| Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; | [optional] 
- **email** | **String**| Filter the report for a specific email addresses | [optional] 
+ **email** | [**String**](.md)| Filter the report for a specific email addresses | [optional] 
  **event** | **String**| Filter the report for a specific event type | [optional] 
  **tags** | **String**| Filter the report for tags (serialized and urlencoded array) | [optional] 
  **message_id** | **String**| Filter on a specific message id | [optional] 
@@ -330,17 +335,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_smtp_report
 
-# **get_smtp_report**
 > GetReports get_smtp_report(opts)
 
 Get your transactional email activity aggregated per day
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -358,8 +364,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::TransactionalEmailsApi.new
-
-opts = { 
+opts = {
   limit: 10, # Integer | Number of documents returned per page
   offset: 0, # Integer | Index of the first document on the page
   start_date: 'start_date_example', # String | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD)
@@ -378,6 +383,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -398,17 +404,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_smtp_template
 
-# **get_smtp_template**
 > GetSmtpTemplateOverview get_smtp_template(template_id)
 
 Returns the template information
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -426,9 +433,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::TransactionalEmailsApi.new
-
-template_id = 789 # Integer | id of the template
-
+template_id = 56 # Integer | id of the template
 
 begin
   #Returns the template information
@@ -440,6 +445,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -455,17 +461,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_smtp_templates
 
-# **get_smtp_templates**
 > GetSmtpTemplates get_smtp_templates(opts)
 
 Get the list of email templates
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -483,9 +490,8 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::TransactionalEmailsApi.new
-
-opts = { 
-  template_status: true, # BOOLEAN | Filter on the status of the template. Active = true, inactive = false
+opts = {
+  template_status: true, # Boolean | Filter on the status of the template. Active = true, inactive = false
   limit: 50, # Integer | Number of documents returned per page
   offset: 0 # Integer | Index of the first document in the page
 }
@@ -501,9 +507,10 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **template_status** | **BOOLEAN**| Filter on the status of the template. Active &#x3D; true, inactive &#x3D; false | [optional] 
+ **template_status** | **Boolean**| Filter on the status of the template. Active &#x3D; true, inactive &#x3D; false | [optional] 
  **limit** | **Integer**| Number of documents returned per page | [optional] [default to 50]
  **offset** | **Integer**| Index of the first document in the page | [optional] [default to 0]
 
@@ -517,17 +524,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_transac_blocked_contacts
 
-# **get_transac_blocked_contacts**
 > GetTransacBlockedContacts get_transac_blocked_contacts(opts)
 
 Get the list of blocked or unsubscribed transactional contacts
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -545,8 +553,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::TransactionalEmailsApi.new
-
-opts = { 
+opts = {
   start_date: 'start_date_example', # String | Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the blocked or unsubscribed contacts
   end_date: 'end_date_example', # String | Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the blocked or unsubscribed contacts
   limit: 50, # Integer | Number of documents returned per page
@@ -564,6 +571,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -583,17 +591,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_transac_email_content
 
-# **get_transac_email_content**
 > GetTransacEmailContent get_transac_email_content(uuid)
 
 Get the personalized content of a sent transactional email
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -611,9 +620,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::TransactionalEmailsApi.new
-
 uuid = 'uuid_example' # String | Unique id of the transactional email that has been sent to a particular contact
-
 
 begin
   #Get the personalized content of a sent transactional email
@@ -625,6 +632,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -640,12 +648,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_transac_emails_list
 
-# **get_transac_emails_list**
 > GetTransacEmailsList get_transac_emails_list(opts)
 
 Get the list of transactional emails on the basis of allowed filters
@@ -653,6 +661,7 @@ Get the list of transactional emails on the basis of allowed filters
 This endpoint will show the list of emails for past 30 days by default. To retrieve emails before that time, please pass startDate and endDate in query filters.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -670,10 +679,9 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::TransactionalEmailsApi.new
-
-opts = { 
+opts = {
   email: 'email_example', # String | Mandatory if templateId and messageId are not passed in query filters. Email address to which transactional email has been sent.
-  template_id: 789, # Integer | Mandatory if email and messageId are not passed in query filters. Id of the template that was used to compose transactional email.
+  template_id: 56, # Integer | Mandatory if email and messageId are not passed in query filters. Id of the template that was used to compose transactional email.
   message_id: 'message_id_example', # String | Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent.
   start_date: Date.parse('2013-10-20'), # Date | Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month.
   end_date: Date.parse('2013-10-20') # Date | Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month.
@@ -689,6 +697,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -708,12 +717,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## send_template
 
-# **send_template**
 > SendTemplateEmail send_template(template_id, send_email)
 
 Send a template
@@ -721,6 +730,7 @@ Send a template
 This endpoint is deprecated. Prefer v3/smtp/email instead.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -738,11 +748,8 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::TransactionalEmailsApi.new
-
-template_id = 789 # Integer | Id of the template
-
+template_id = 56 # Integer | Id of the template
 send_email = SibApiV3Sdk::SendEmail.new # SendEmail | 
-
 
 begin
   #Send a template
@@ -754,6 +761,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -770,17 +778,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## send_test_template
 
-# **send_test_template**
 > send_test_template(template_id, send_test_email)
 
 Send a template to your test list
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -798,11 +807,8 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::TransactionalEmailsApi.new
-
-template_id = 789 # Integer | Id of the template
-
+template_id = 56 # Integer | Id of the template
 send_test_email = SibApiV3Sdk::SendTestEmail.new # SendTestEmail | 
-
 
 begin
   #Send a template to your test list
@@ -813,6 +819,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -829,17 +836,18 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## send_transac_email
 
-# **send_transac_email**
 > CreateSmtpEmail send_transac_email(send_smtp_email)
 
 Send a transactional email
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -857,9 +865,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::TransactionalEmailsApi.new
-
 send_smtp_email = SibApiV3Sdk::SendSmtpEmail.new # SendSmtpEmail | Values to send a transactional email
-
 
 begin
   #Send a transactional email
@@ -871,6 +877,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -886,17 +893,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## smtp_blocked_contacts_email_delete
 
-# **smtp_blocked_contacts_email_delete**
 > smtp_blocked_contacts_email_delete(email)
 
 Unblock or resubscribe a transactional contact
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -914,9 +922,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::TransactionalEmailsApi.new
-
 email = 'email_example' # String | contact email (urlencoded) to unblock.
-
 
 begin
   #Unblock or resubscribe a transactional contact
@@ -927,6 +933,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -942,17 +949,18 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## smtp_log_message_id_delete
 
-# **smtp_log_message_id_delete**
 > smtp_log_message_id_delete(message_id)
 
 Delete an SMTP transactional log
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -970,9 +978,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::TransactionalEmailsApi.new
-
 message_id = 'message_id_example' # String | MessageId of the transactional log to delete
-
 
 begin
   #Delete an SMTP transactional log
@@ -983,6 +989,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -998,17 +1005,18 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## update_smtp_template
 
-# **update_smtp_template**
 > update_smtp_template(template_id, smtp_template)
 
 Update an email template
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -1026,11 +1034,8 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::TransactionalEmailsApi.new
-
-template_id = 789 # Integer | id of the template
-
+template_id = 56 # Integer | id of the template
 smtp_template = SibApiV3Sdk::UpdateSmtpTemplate.new # UpdateSmtpTemplate | values to update in transactional email template
-
 
 begin
   #Update an email template
@@ -1041,6 +1046,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1057,8 +1063,6 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 

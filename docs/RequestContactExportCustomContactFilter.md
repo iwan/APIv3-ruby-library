@@ -1,6 +1,7 @@
 # SibApiV3Sdk::RequestContactExportCustomContactFilter
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **action_for_contacts** | **String** | Mandatory if neither actionForEmailCampaigns nor actionForSmsCampaigns is passed. This will export the contacts on the basis of provided action applied on contacts as per the list id. * allContacts - Fetch the list of all contacts for a particular list. * subscribed &amp; unsubscribed - Fetch the list of subscribed / unsubscribed (blacklisted via any means) contacts for a particular list. * unsubscribedPerList - Fetch the list of contacts that are unsubscribed from a particular list only.  | [optional] 
@@ -9,5 +10,18 @@ Name | Type | Description | Notes
 **list_id** | **Integer** | Mandatory if actionForContacts is passed, ignored otherwise. Id of the list for which the corresponding action shall be applied in the filter. | [optional] 
 **email_campaign_id** | **Integer** | Considered only if actionForEmailCampaigns is passed, ignored otherwise. Mandatory if action is one of the following - openers, nonOpeners, clickers, nonClickers, unsubscribed. The id of the email campaign for which the corresponding action shall be applied in the filter. | [optional] 
 **sms_campaign_id** | **Integer** | Considered only if actionForSmsCampaigns is passed, ignored otherwise. The id of sms campaign for which the corresponding action shall be applied in the filter. | [optional] 
+
+## Code Sample
+
+```ruby
+require 'SibApiV3Sdk'
+
+instance = SibApiV3Sdk::RequestContactExportCustomContactFilter.new(action_for_contacts: null,
+                                 action_for_email_campaigns: null,
+                                 action_for_sms_campaigns: null,
+                                 list_id: 2,
+                                 email_campaign_id: 12,
+                                 sms_campaign_id: 12)
+```
 
 

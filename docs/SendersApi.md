@@ -12,12 +12,15 @@ Method | HTTP request | Description
 [**update_sender**](SendersApi.md#update_sender) | **PUT** /senders/{senderId} | Update a sender
 
 
-# **create_sender**
+
+## create_sender
+
 > CreateSenderModel create_sender(opts)
 
 Create a new sender
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -35,8 +38,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::SendersApi.new
-
-opts = { 
+opts = {
   sender: SibApiV3Sdk::CreateSender.new # CreateSender | sender's name
 }
 
@@ -50,6 +52,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -65,17 +68,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## delete_sender
 
-# **delete_sender**
 > delete_sender(sender_id)
 
 Delete a sender
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -93,9 +97,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::SendersApi.new
-
-sender_id = 789 # Integer | Id of the sender
-
+sender_id = 56 # Integer | Id of the sender
 
 begin
   #Delete a sender
@@ -106,6 +108,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -121,17 +124,18 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_ips
 
-# **get_ips**
 > GetIps get_ips
 
 Get all the dedicated IPs for your account
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -160,6 +164,7 @@ end
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -172,17 +177,18 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_ips_from_sender
 
-# **get_ips_from_sender**
 > GetIpsFromSender get_ips_from_sender(sender_id)
 
 Get all the dedicated IPs for a sender
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -200,9 +206,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::SendersApi.new
-
-sender_id = 789 # Integer | Id of the sender
-
+sender_id = 56 # Integer | Id of the sender
 
 begin
   #Get all the dedicated IPs for a sender
@@ -214,6 +218,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -229,17 +234,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_senders
 
-# **get_senders**
 > GetSendersList get_senders(opts)
 
 Get the list of all your senders
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -257,8 +263,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::SendersApi.new
-
-opts = { 
+opts = {
   ip: 'ip_example', # String | Filter your senders for a specific ip (available for dedicated IP usage only)
   domain: 'domain_example' # String | Filter your senders for a specific domain
 }
@@ -273,6 +278,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -289,17 +295,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## update_sender
 
-# **update_sender**
 > update_sender(sender_id, opts)
 
 Update a sender
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -317,10 +324,8 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::SendersApi.new
-
-sender_id = 789 # Integer | Id of the sender
-
-opts = { 
+sender_id = 56 # Integer | Id of the sender
+opts = {
   sender: SibApiV3Sdk::UpdateSender.new # UpdateSender | sender's name
 }
 
@@ -333,6 +338,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -349,8 +355,6 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 

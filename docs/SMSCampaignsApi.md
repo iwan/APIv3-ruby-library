@@ -16,12 +16,15 @@ Method | HTTP request | Description
 [**update_sms_campaign_status**](SMSCampaignsApi.md#update_sms_campaign_status) | **PUT** /smsCampaigns/{campaignId}/status | Update a campaign&#39;s status
 
 
-# **create_sms_campaign**
+
+## create_sms_campaign
+
 > CreateModel create_sms_campaign(create_sms_campaign)
 
 Creates an SMS campaign
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -39,9 +42,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::SMSCampaignsApi.new
-
 create_sms_campaign = SibApiV3Sdk::CreateSmsCampaign.new # CreateSmsCampaign | Values to create an SMS Campaign
-
 
 begin
   #Creates an SMS campaign
@@ -53,6 +54,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -68,17 +70,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## delete_sms_campaign
 
-# **delete_sms_campaign**
 > delete_sms_campaign(campaign_id)
 
 Delete an SMS campaign
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -96,9 +99,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::SMSCampaignsApi.new
-
-campaign_id = 789 # Integer | id of the SMS campaign
-
+campaign_id = 56 # Integer | id of the SMS campaign
 
 begin
   #Delete an SMS campaign
@@ -109,6 +110,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -124,17 +126,18 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_sms_campaign
 
-# **get_sms_campaign**
 > GetSmsCampaign get_sms_campaign(campaign_id)
 
 Get an SMS campaign
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -152,9 +155,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::SMSCampaignsApi.new
-
-campaign_id = 789 # Integer | id of the SMS campaign
-
+campaign_id = 56 # Integer | id of the SMS campaign
 
 begin
   #Get an SMS campaign
@@ -166,6 +167,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -181,17 +183,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_sms_campaigns
 
-# **get_sms_campaigns**
 > GetSmsCampaigns get_sms_campaigns(opts)
 
 Returns the information for all your created SMS campaigns
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -209,8 +212,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::SMSCampaignsApi.new
-
-opts = { 
+opts = {
   status: 'status_example', # String | Status of campaign.
   start_date: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent sms campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' )
   end_date: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent sms campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' )
@@ -228,6 +230,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -247,12 +250,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## request_sms_recipient_export
 
-# **request_sms_recipient_export**
 > CreatedProcessId request_sms_recipient_export(campaign_id, opts)
 
 Export an SMS campaign's recipients
@@ -260,6 +263,7 @@ Export an SMS campaign's recipients
 It returns the background process ID which on completion calls the notify URL that you have set in the input.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -277,10 +281,8 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::SMSCampaignsApi.new
-
-campaign_id = 789 # Integer | id of the campaign
-
-opts = { 
+campaign_id = 56 # Integer | id of the campaign
+opts = {
   recipient_export: SibApiV3Sdk::RequestSmsRecipientExport.new # RequestSmsRecipientExport | Values to send for a recipient export request
 }
 
@@ -294,6 +296,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -310,17 +313,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## send_sms_campaign_now
 
-# **send_sms_campaign_now**
 > send_sms_campaign_now(campaign_id)
 
 Send your SMS campaign immediately
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -338,9 +342,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::SMSCampaignsApi.new
-
-campaign_id = 789 # Integer | id of the campaign
-
+campaign_id = 56 # Integer | id of the campaign
 
 begin
   #Send your SMS campaign immediately
@@ -351,6 +353,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -366,12 +369,12 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## send_sms_report
 
-# **send_sms_report**
 > send_sms_report(campaign_id, send_report)
 
 Send an SMS campaign's report
@@ -379,6 +382,7 @@ Send an SMS campaign's report
 Send report of Sent and Archived campaign, to the specified email addresses, with respective data and a pdf attachment in detail.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -396,11 +400,8 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::SMSCampaignsApi.new
-
-campaign_id = 789 # Integer | id of the campaign
-
+campaign_id = 56 # Integer | id of the campaign
 send_report = SibApiV3Sdk::SendReport.new # SendReport | Values for send a report
-
 
 begin
   #Send an SMS campaign's report
@@ -411,6 +412,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -427,17 +429,18 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## send_test_sms
 
-# **send_test_sms**
 > send_test_sms(campaign_id, phone_number)
 
 Send a test SMS campaign
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -455,11 +458,8 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::SMSCampaignsApi.new
-
-campaign_id = 789 # Integer | Id of the SMS campaign
-
+campaign_id = 56 # Integer | Id of the SMS campaign
 phone_number = SibApiV3Sdk::SendTestSms.new # SendTestSms | Mobile number of the recipient with the country code. This number must belong to one of your contacts in SendinBlue account and must not be blacklisted
-
 
 begin
   #Send a test SMS campaign
@@ -470,6 +470,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -486,17 +487,18 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## update_sms_campaign
 
-# **update_sms_campaign**
 > update_sms_campaign(campaign_id, update_sms_campaign)
 
 Update an SMS campaign
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -514,11 +516,8 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::SMSCampaignsApi.new
-
-campaign_id = 789 # Integer | id of the SMS campaign
-
+campaign_id = 56 # Integer | id of the SMS campaign
 update_sms_campaign = SibApiV3Sdk::UpdateSmsCampaign.new # UpdateSmsCampaign | Values to update an SMS Campaign
-
 
 begin
   #Update an SMS campaign
@@ -529,6 +528,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -545,17 +545,18 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## update_sms_campaign_status
 
-# **update_sms_campaign_status**
 > update_sms_campaign_status(campaign_id, status)
 
 Update a campaign's status
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -573,11 +574,8 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::SMSCampaignsApi.new
-
-campaign_id = 789 # Integer | id of the campaign
-
+campaign_id = 56 # Integer | id of the campaign
 status = SibApiV3Sdk::UpdateCampaignStatus.new # UpdateCampaignStatus | Status of the campaign.
-
 
 begin
   #Update a campaign's status
@@ -588,6 +586,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -604,8 +603,6 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 

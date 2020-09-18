@@ -1,6 +1,7 @@
 # SibApiV3Sdk::GetSmsCampaignOverview
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** | ID of the SMS Campaign | 
@@ -11,5 +12,20 @@ Name | Type | Description | Notes
 **sender** | **String** | Sender of the SMS Campaign | 
 **created_at** | **DateTime** | Creation UTC date-time of the SMS campaign (YYYY-MM-DDTHH:mm:ss.SSSZ) | 
 **modified_at** | **DateTime** | UTC date-time of last modification of the SMS campaign (YYYY-MM-DDTHH:mm:ss.SSSZ) | 
+
+## Code Sample
+
+```ruby
+require 'SibApiV3Sdk'
+
+instance = SibApiV3Sdk::GetSmsCampaignOverview.new(id: 2,
+                                 name: PROMO CODE,
+                                 status: draft,
+                                 content: Visit our Store and get some discount !,
+                                 scheduled_at: 2017-06-01T12:30Z,
+                                 sender: MyCompany,
+                                 created_at: 2017-06-01T12:30Z,
+                                 modified_at: 2017-05-01T12:30Z)
+```
 
 

@@ -1,6 +1,7 @@
 # SibApiV3Sdk::GetTransacEmailContent
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **email** | **String** | Email address to which transactional email has been sent | 
@@ -10,5 +11,19 @@ Name | Type | Description | Notes
 **events** | [**Array&lt;GetTransacEmailContentEvents&gt;**](GetTransacEmailContentEvents.md) | Series of events which occurred on the transactional email | 
 **body** | **String** | Actual content of the transactional email that has been sent | 
 **attachment_count** | **Integer** | Count of the attachments that were sent in the email | 
+
+## Code Sample
+
+```ruby
+require 'SibApiV3Sdk'
+
+instance = SibApiV3Sdk::GetTransacEmailContent.new(email: abc@example.com,
+                                 subject: Summer Camp,
+                                 template_id: 2,
+                                 date: 2017-03-12T12:30Z,
+                                 events: null,
+                                 body: &lt;!DOCTYPE html&gt; &lt;html&gt; &lt;body&gt; &lt;h1&gt;Greetings from the team&lt;/h1&gt; &lt;p&gt;This is the actual html content sent&lt;/p&gt; &lt;/body&gt; &lt;/html&gt;,
+                                 attachment_count: 2)
+```
 
 

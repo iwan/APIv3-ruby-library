@@ -19,12 +19,15 @@ Method | HTTP request | Description
 [**upload_image_to_gallery**](EmailCampaignsApi.md#upload_image_to_gallery) | **POST** /emailCampaigns/images | Upload an image to your account&#39;s image gallery
 
 
-# **create_email_campaign**
+
+## create_email_campaign
+
 > CreateModel create_email_campaign(email_campaigns)
 
 Create an email campaign
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -42,9 +45,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::EmailCampaignsApi.new
-
 email_campaigns = SibApiV3Sdk::CreateEmailCampaign.new # CreateEmailCampaign | Values to create a campaign
-
 
 begin
   #Create an email campaign
@@ -56,6 +57,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -71,17 +73,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## delete_email_campaign
 
-# **delete_email_campaign**
 > delete_email_campaign(campaign_id)
 
 Delete an email campaign
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -99,9 +102,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::EmailCampaignsApi.new
-
-campaign_id = 789 # Integer | id of the campaign
-
+campaign_id = 56 # Integer | id of the campaign
 
 begin
   #Delete an email campaign
@@ -112,6 +113,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -127,17 +129,18 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## email_export_recipients
 
-# **email_export_recipients**
 > CreatedProcessId email_export_recipients(campaign_id, opts)
 
 Export the recipients of an email campaign
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -155,10 +158,8 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::EmailCampaignsApi.new
-
-campaign_id = 789 # Integer | Id of the campaign
-
-opts = { 
+campaign_id = 56 # Integer | Id of the campaign
+opts = {
   recipient_export: SibApiV3Sdk::EmailExportRecipients.new # EmailExportRecipients | Values to send for a recipient export request
 }
 
@@ -172,6 +173,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -188,12 +190,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## get_ab_test_campaign_result
 
-# **get_ab_test_campaign_result**
 > AbTestCampaignResult get_ab_test_campaign_result(campaign_id)
 
 Get an A/B test email campaign results
@@ -201,6 +203,7 @@ Get an A/B test email campaign results
 Obtain winning version of an A/B test email campaign
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -218,9 +221,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::EmailCampaignsApi.new
-
-campaign_id = 789 # Integer | Id of the A/B test campaign
-
+campaign_id = 56 # Integer | Id of the A/B test campaign
 
 begin
   #Get an A/B test email campaign results
@@ -232,6 +233,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -247,17 +249,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_email_campaign
 
-# **get_email_campaign**
 > GetEmailCampaign get_email_campaign(campaign_id)
 
 Get an email campaign report
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -275,9 +278,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::EmailCampaignsApi.new
-
-campaign_id = 789 # Integer | Id of the campaign
-
+campaign_id = 56 # Integer | Id of the campaign
 
 begin
   #Get an email campaign report
@@ -289,6 +290,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -304,17 +306,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_email_campaigns
 
-# **get_email_campaigns**
 > GetEmailCampaigns get_email_campaigns(opts)
 
 Return all your created email campaigns
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -332,8 +335,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::EmailCampaignsApi.new
-
-opts = { 
+opts = {
   type: 'type_example', # String | Filter on the type of the campaigns
   status: 'status_example', # String | Filter on the status of the campaign
   start_date: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' )
@@ -352,6 +354,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -372,12 +375,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json, applications/json
 
 
+## get_shared_template_url
 
-# **get_shared_template_url**
 > GetSharedTemplateUrl get_shared_template_url(campaign_id)
 
 Get a shared template url
@@ -385,6 +388,7 @@ Get a shared template url
 Get a unique URL to share & import an email template from one Sendinblue account to another.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -402,9 +406,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::EmailCampaignsApi.new
-
-campaign_id = 789 # Integer | Id of the campaign or template
-
+campaign_id = 56 # Integer | Id of the campaign or template
 
 begin
   #Get a shared template url
@@ -416,6 +418,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -431,17 +434,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## send_email_campaign_now
 
-# **send_email_campaign_now**
 > send_email_campaign_now(campaign_id)
 
 Send an email campaign immediately, based on campaignId
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -459,9 +463,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::EmailCampaignsApi.new
-
-campaign_id = 789 # Integer | Id of the campaign
-
+campaign_id = 56 # Integer | Id of the campaign
 
 begin
   #Send an email campaign immediately, based on campaignId
@@ -472,6 +474,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -487,12 +490,12 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## send_report
 
-# **send_report**
 > send_report(campaign_id, send_report)
 
 Send the report of a campaign
@@ -500,6 +503,7 @@ Send the report of a campaign
 A PDF will be sent to the specified email addresses
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -517,11 +521,8 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::EmailCampaignsApi.new
-
-campaign_id = 789 # Integer | Id of the campaign
-
+campaign_id = 56 # Integer | Id of the campaign
 send_report = SibApiV3Sdk::SendReport.new # SendReport | Values for send a report
-
 
 begin
   #Send the report of a campaign
@@ -532,6 +533,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -548,17 +550,18 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## send_test_email
 
-# **send_test_email**
 > send_test_email(campaign_id, email_to)
 
 Send an email campaign to your test list
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -576,11 +579,8 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::EmailCampaignsApi.new
-
-campaign_id = 789 # Integer | Id of the campaign
-
+campaign_id = 56 # Integer | Id of the campaign
 email_to = SibApiV3Sdk::SendTestEmail.new # SendTestEmail | 
-
 
 begin
   #Send an email campaign to your test list
@@ -591,6 +591,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -607,17 +608,18 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## update_campaign_status
 
-# **update_campaign_status**
 > update_campaign_status(campaign_id, status)
 
 Update an email campaign status
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -635,11 +637,8 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::EmailCampaignsApi.new
-
-campaign_id = 789 # Integer | Id of the campaign
-
+campaign_id = 56 # Integer | Id of the campaign
 status = SibApiV3Sdk::UpdateCampaignStatus.new # UpdateCampaignStatus | Status of the campaign
-
 
 begin
   #Update an email campaign status
@@ -650,6 +649,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -666,17 +666,18 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## update_email_campaign
 
-# **update_email_campaign**
 > update_email_campaign(campaign_id, email_campaign)
 
 Update an email campaign
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -694,11 +695,8 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::EmailCampaignsApi.new
-
-campaign_id = 789 # Integer | Id of the campaign
-
+campaign_id = 56 # Integer | Id of the campaign
 email_campaign = SibApiV3Sdk::UpdateEmailCampaign.new # UpdateEmailCampaign | Values to update a campaign
-
 
 begin
   #Update an email campaign
@@ -709,6 +707,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -725,17 +724,18 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## upload_image_to_gallery
 
-# **upload_image_to_gallery**
 > upload_image_to_gallery(upload_image)
 
 Upload an image to your account's image gallery
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -753,9 +753,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::EmailCampaignsApi.new
-
 upload_image = SibApiV3Sdk::UploadImageToGallery.new # UploadImageToGallery | Parameters to upload an image
-
 
 begin
   #Upload an image to your account's image gallery
@@ -766,6 +764,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -781,8 +780,6 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 

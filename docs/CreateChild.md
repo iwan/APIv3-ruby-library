@@ -1,6 +1,7 @@
 # SibApiV3Sdk::CreateChild
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **email** | **String** | Email address to create the child account | 
@@ -9,5 +10,18 @@ Name | Type | Description | Notes
 **company_name** | **String** | Company name to use to create the child account | 
 **password** | **String** | Password for the child account to login | 
 **language** | **String** | Language of the child account | [optional] 
+
+## Code Sample
+
+```ruby
+require 'SibApiV3Sdk'
+
+instance = SibApiV3Sdk::CreateChild.new(email: josh.cruise@example.com,
+                                 first_name: Josh,
+                                 last_name: Cruise,
+                                 company_name: Your Company,
+                                 password: Pa55w0rd65,
+                                 language: en)
+```
 
 

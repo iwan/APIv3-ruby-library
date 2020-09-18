@@ -12,12 +12,15 @@ Method | HTTP request | Description
 [**update_folder**](FoldersApi.md#update_folder) | **PUT** /contacts/folders/{folderId} | Update a folder
 
 
-# **create_folder**
+
+## create_folder
+
 > CreateModel create_folder(create_folder)
 
 Create a folder
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -35,9 +38,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::FoldersApi.new
-
 create_folder = SibApiV3Sdk::CreateUpdateFolder.new # CreateUpdateFolder | Name of the folder
-
 
 begin
   #Create a folder
@@ -49,6 +50,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -64,17 +66,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## delete_folder
 
-# **delete_folder**
 > delete_folder(folder_id)
 
 Delete a folder (and all its lists)
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -92,9 +95,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::FoldersApi.new
-
-folder_id = 789 # Integer | Id of the folder
-
+folder_id = 56 # Integer | Id of the folder
 
 begin
   #Delete a folder (and all its lists)
@@ -105,6 +106,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -120,17 +122,18 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_folder
 
-# **get_folder**
 > GetFolder get_folder(folder_id)
 
 Returns a folder's details
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -148,9 +151,7 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::FoldersApi.new
-
-folder_id = 789 # Integer | id of the folder
-
+folder_id = 56 # Integer | id of the folder
 
 begin
   #Returns a folder's details
@@ -162,6 +163,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -177,17 +179,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_folder_lists
 
-# **get_folder_lists**
 > GetFolderLists get_folder_lists(folder_id, opts)
 
 Get lists in a folder
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -205,10 +208,8 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::FoldersApi.new
-
-folder_id = 789 # Integer | Id of the folder
-
-opts = { 
+folder_id = 56 # Integer | Id of the folder
+opts = {
   limit: 10, # Integer | Number of documents per page
   offset: 0 # Integer | Index of the first document of the page
 }
@@ -223,6 +224,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -240,17 +242,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_folders
 
-# **get_folders**
 > GetFolders get_folders(limit, offset)
 
 Get all folders
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -268,11 +271,8 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::FoldersApi.new
-
 limit = 10 # Integer | Number of documents per page
-
 offset = 0 # Integer | Index of the first document of the page
-
 
 begin
   #Get all folders
@@ -284,6 +284,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -300,17 +301,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## update_folder
 
-# **update_folder**
 > update_folder(folder_id, update_folder)
 
 Update a folder
 
 ### Example
+
 ```ruby
 # load the gem
 require 'sib-api-v3-sdk'
@@ -328,11 +330,8 @@ SibApiV3Sdk.configure do |config|
 end
 
 api_instance = SibApiV3Sdk::FoldersApi.new
-
-folder_id = 789 # Integer | Id of the folder
-
+folder_id = 56 # Integer | Id of the folder
 update_folder = SibApiV3Sdk::CreateUpdateFolder.new # CreateUpdateFolder | Name of the folder
-
 
 begin
   #Update a folder
@@ -343,6 +342,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -359,8 +359,6 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 

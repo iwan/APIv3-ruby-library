@@ -1,6 +1,7 @@
 # SibApiV3Sdk::GetAggregatedReport
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **range** | **String** | Time frame of the report | [optional] 
@@ -16,5 +17,25 @@ Name | Type | Description | Notes
 **blocked** | **Integer** | Number of blocked contact emails for the timeframe | [optional] 
 **invalid** | **Integer** | Number of invalid emails for the timeframe | [optional] 
 **unsubscribed** | **Integer** | Number of unsubscribed emails for the timeframe | [optional] 
+
+## Code Sample
+
+```ruby
+require 'SibApiV3Sdk'
+
+instance = SibApiV3Sdk::GetAggregatedReport.new(range: 2016-09-08|2017-04-06,
+                                 requests: 263,
+                                 delivered: 249,
+                                 hard_bounces: 1,
+                                 soft_bounces: 4,
+                                 clicks: 12,
+                                 unique_clicks: 8,
+                                 opens: 47,
+                                 unique_opens: 37,
+                                 spam_reports: 0,
+                                 blocked: 2,
+                                 invalid: 0,
+                                 unsubscribed: 0)
+```
 
 
